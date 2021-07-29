@@ -5,9 +5,9 @@
 
 * [Introdução](#introdução)
 * [Preparando o Ambiente](#preparando-o-ambiente)
-* [Projeto x App](#projeto-app)
+* [Projeto x App](#projeto-x-app)
 * [Criando os modelos e API](#criando-os-modelos-e-api)
-* [Criacao das rotas](#criacao-das-rotas)
+* [Criação das rotas](#criação-das-rotas)
 
 # Introdução
 A ideia do projeto é que possamos armazenar livros e seus atributos dentro de um banco de dados e gerenciar tudo isso sem precisar de uma interface gráfica. Assim, outra aplicação poderá se comunicar com a nossa de forma eficiente. Esse é o conceito de API (Aplication Programming Interface)
@@ -87,7 +87,7 @@ class Books(models.Model):
     author = models.CharField(max_length=255)
     release_year = models.IntegerField()
 ```
-# Criacao das rotas
+# Criação das rotas
 Agora com o viewset e o serializer a única coisa que falta é uma rota. Portanto vamos para **./library/urls.py** resolver esse problema
 
 ```py
@@ -112,6 +112,6 @@ Como criamos um modelo novo lá em cima, precisamos avisar e em seguida migrar t
 >python manage.py migrate
 >python manage.py runserver 
 ```
-Agora você pode usar um programa como <a href="https://insomnia.rest/">Insomnia</a> para testar os métodos http no link do seu servidor local.
+Agora você pode usar um programa como <a href="https://insomnia.rest/">Insomnia</a> para testar os métodos http no link do seu servidor local. 🥰
 
 ![insomnia](img/insomnia.png)

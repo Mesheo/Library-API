@@ -38,6 +38,11 @@ Para criar as tabelas no banco de dados (Por enquanto *Sqlite3*) executamos o co
 ```bash
 python manage.py migrate
 ```
+E isso evita que as unapplied migrations apareça na próxima vez que você levantar o servidor 
+
+![imagem unaplied](img/unapplied.png)
+
+
 
 
 

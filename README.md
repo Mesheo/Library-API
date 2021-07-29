@@ -6,8 +6,7 @@
 * [Introdução](#introdução)
 * [Preparando o Ambiente](#preparando-o-ambiente)
 * [Projeto x App](#projeto-app)
-* [Criando os modelos](#criando-os-modelos)
-* [Pasta API](#pasta-api)
+* [Criando os modelos e API](#criando-os-modelos-e-api)
 * [Criacao das rotas](#criacao-das-rotas)
 
 # Introdução
@@ -42,7 +41,7 @@ Isso evita que a notificação *unapplied migrations* apareça na próxima vez q
 
 ![imagem unapplied](img/18unapplied.png)
 
-# Criando os modelos
+# Criando os modelos e API
 No arquivo **./library/settings.py** precisamos indicar ao nosso projeto library sobre a existência do app books e também o uso do rest framework. Portanto adicionamos as seguintes linhas sublinhadas
 
 ![imagem das linhas](img/library_settings.jpg)
@@ -66,8 +65,6 @@ Dentro de **./library/books** iremos criar a pasta **/api** com os arquivos
 * viewsets.py 
 
 ### Serializers
-Numa api o serializer é o que transforma os objetos do programa em strings para conseguir fazer a comunicação cliente-servidor da maneira mais eficaz possível: com 0s e 1s
-
 ```py
 from rest_framework import serializers
 from books import models
@@ -90,5 +87,31 @@ class Books(models.Model):
     author = models.CharField(max_length=255)
     release_year = models.IntegerField()
 ```
+# Criacao das rotas
+Agora com o viewset e o serializer a única coisa que falta é uma rota. Portanto vamos para **./library/urls.py** resolver esse problema
 
+```py
+from django.contrib import admin
+from django.urls import path, include
 
+from rest_framework import routers
+from books.api import viewsets as booksviewsets
+#criando nosso objeto de rota
+route = routers.DefaultRouter()
+route.register(r'books', booksviewsets.BooksViewSet, basename="Books")
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include(route.urls))
+]
+```
+Como criamos um modelo novo lá em cima, precisamos avisar e em seguida migrar todos essas novas informações para o banco de dados
+
+```bash
+>python manage.py makemigrations 
+>python manage.py migrate
+>python manage.py runserver 
+```
+Agora você pode usar um programa como <a href="https://insomnia.rest/">Insomnia</a> para testar os métodos http no link do seu servidor local.
+
+![insomnia](img/insomnia.png)

@@ -45,7 +45,7 @@ Isso evita que a notificação *unapplied migrations* apareça na próxima vez q
 # Criando os modelos
 No arquivo **./library/settings.py** precisamos indicar ao nosso projeto library sobre a existência do app books e também o uso do rest framework. Portanto adicionamos as seguintes linhas sublinhadas
 
-![imagem das linhas](img/library_setting.jpg)
+![imagem das linhas](img/library_settings.jpg)
 
 Agora em **./library/books/models.py** iremos criar nosso modelo com os atributos que um livro deve ter.
 
@@ -80,7 +80,6 @@ class BooksSerializer(serializers.ModelSerializer):
 
 ### Viewsets
 ```py
-```python
 from django.db import models
 from uuid import uuid4
 

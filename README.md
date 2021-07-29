@@ -1,7 +1,6 @@
->Todo o conteúdo desse readme foi escrito beaseado nesse <a href="https://www.youtube.com/watch?v=wtl8ZyCbTbg&list=PLcM_74VFgRhpyCtsNXyBUf27ZRbyQnEEb">vídeo.</a> Espero que você aprenda algo novo!
+>Todo o conteúdo desse readme foi escrito beaseado nesse <a href="https://www.youtube.com/watch?v=wtl8ZyCbTbg&list=PLcM_74VFgRhpyCtsNXyBUf27ZRbyQnEEb">vídeo.</a> e eu o fiz com a intenção de revisar aquilo que aprendi, espero que você aprenda algo novo!
 
 # API para uma biblioteca
->O python facilita bastante coisas para a gente, como os serializers (que convertem objetos para strings na comunicação cliente-servidor) e os verbos http (GET, POST, PUT, DELETE) que de certa forma também vem por padrão. Não me aprofundei neles durante o readme porque também preciso entender melhor como essas coisas funcionam
 
 * [Introdução](#introdução)
 * [Preparando o Ambiente](#preparando-o-ambiente)
@@ -115,3 +114,5 @@ Como criamos um modelo novo lá em cima, precisamos avisar e em seguida migrar t
 Agora você pode usar um programa como <a href="https://insomnia.rest/">Insomnia</a> para testar os métodos http no link do seu servidor local. 🥰
 
 ![insomnia](img/insomnia.png)
+
+>O python facilita bastante coisas para a gente, como os serializers (que convertem objetos para strings na comunicação cliente-servidor) e os verbos http (GET, POST, PUT, DELETE) que de certa forma também vem por padrão. Não me aprofundei neles durante o readme porque também preciso entender melhor como essas coisas funcionam

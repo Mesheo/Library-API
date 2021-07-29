@@ -9,7 +9,7 @@
 * [Criação das rotas](#criação-das-rotas)
 
 # Introdução
-A ideia do projeto é que possamos armazenar livros e seus atributos dentro de um banco de dados e gerenciar tudo isso sem precisar de uma interface gráfica. Assim, outra aplicação poderá se comunicar com a nossa de forma eficiente.  Esse é o conceito de API (Application Programming Interface)
+A ideia do projeto é que possamos armazenar livros e seus atributos dentro de um banco de dados e gerenciar tudo isso sem precisar de uma interface gráfica. Assim, outra aplicação poderá se comunicar com a nossa de forma eficiente.<br> Esse é o conceito de API (Application Programming Interface)
 
 # Preparando o ambiente
 Aqui temos a receita de bolo pra deixar a sua máquina pronta para levantar um servidor com o django e receber aquele **200** bonito na cara
@@ -19,7 +19,7 @@ Aqui temos a receita de bolo pra deixar a sua máquina pronta para levantar um s
 >./venv/Scripts/Activate.ps1 #Ativando o ambiente virtual
 >pip install django djangorestframework #instalação local das nossas dependências
 ```
-O lance todo do ambiente virtual é que todas as suas dependências *(e no python costumam ser muitas)*  ficam apenas num diretório específico. 
+O lance todo do ambiente virtual é que todas as suas dependências *(e no python costumam ser muitas)*  ficam apenas num diretório específico. <br>
 Logo, com uma venv você pode criar projetos que usam versões diferentes da mesma biblioteca sem que haja conflito na hora do import.
 
 # Projeto x App

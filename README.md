@@ -23,7 +23,7 @@ pip install django djangorestframework #instalação local das nossas dependênc
 ```
 A graça do ambiente virtual é que todas as suas dependências (e no python costumam são muitas) ficam apenas num diretório específico. Logo, você pode criar projetos que usam versões diferentes da mesma biblioteca sem que haja conflito na hora do import.
 
-### Projeto x App
+# Projeto x App
 Ainda no terminal usamos os proximos comandos para criar o `project` que vai carregar nosso `app`. No django cada project pode carregar multiplos apps, como um site de esportes que pode ter um app para os artigos, outro para rankings etc.
 ```bash
 django-admin startproject library . #ponto indica diretório atual
@@ -42,8 +42,54 @@ Isso evita que a notificação *unapplied migrations* apareça na próxima vez q
 
 ![imagem unapplied](img/18unapplied.png)
 
+# Criando os modelos
+No arquivo **./library/settings.py** precisamos indicar ao nosso projeto library sobre a existência do app books e também o uso do rest framework. Portanto adicionamos as seguintes linhas sublinhadas
 
+![imagem das linhas](img/library_setting.jpg)
 
+Agora em **./library/books/models.py** iremos criar nosso modelo com os atributos que um livro deve ter.
 
+```py
+from django.db import models
+from uuid import uuid4
+
+class Books(models.Model):
+    #criando os atributos do livro
+    id_book = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    title = models.CharField(max_length=255)
+    author = models.CharField(max_length=255)
+    release_year = models.IntegerField()
+```
+## Serializers e Viewsets
+Dentro de **./library/books** iremos criar a pasta **/api** com os arquivos 
+* serializers.py 
+* viewsets.py 
+
+### Serializers
+Numa api o serializer é o que transforma os objetos do programa em strings para conseguir fazer a comunicação cliente-servidor da maneira mais eficaz possivél: com 0s e 1s
+
+```py
+from rest_framework import serializers
+from books import models
+
+class BooksSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Books
+        fields = '__all__' #todos os campos do model id_book, author..
+```
+
+### Viewsets
+```py
+```python
+from django.db import models
+from uuid import uuid4
+
+class Books(models.Model):
+    #criando os atributos do livro
+    id_book = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    title = models.CharField(max_length=255)
+    author = models.CharField(max_length=255)
+    release_year = models.IntegerField()
+```
 
 

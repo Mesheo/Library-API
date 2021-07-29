@@ -23,7 +23,7 @@ O lance do ambiente virtual é que todas suas dependências *(que no python cost
 Logo, com uma venv você pode criar projetos que usam versões diferentes da mesma biblioteca sem que haja conflito na hora do import.
 
 # Projeto x App
-No django cada **project** pode carregar múltiplos **apps**, como um site de esportes que pode ter um app para os artigos, outro para rankings etc.<br>
+No django cada **project** pode carregar múltiplos **apps**, como um projeto site de esportes que pode ter um app para os artigos, outro para rankings etc.<br>
 Ainda no terminal usamos os comandos a seguir para criar o project **library** que vai carregar nosso app **books**. 
 
 ```bash

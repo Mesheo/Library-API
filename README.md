@@ -26,13 +26,15 @@ A graça do ambiente virtual é que todas as suas dependências (e no python cos
 ### Projeto x App
 Ainda no terminal usamos os proximos comandos para criar o `project` que vai carregar nosso `app`. No django cada project pode carregar multiplos apps, como um site de esportes que pode ter um app para os artigos, outro para rankings etc.
 ```bash
-django-admin startproject library . #o ponto indica o diretório atual
+django-admin startproject library . #ponto indica diretório atual
 django-admin startapp books
 python manage.py runserver #pra levantarmos o servidor local com a nossa aplicação
 ```
 Sua estrutura de pastas deve estar assim:
+
 ![imagem da estrutura](img/imagem-estrutura.jpg)
-Para criar as tabelas no banco de dados (Por enquanto Sqlite3) executamos o comando
+
+Para criar as tabelas no banco de dados (Por enquanto *Sqlite3*) executamos o comando
 ```bash
 python manage.py migrate
 ```

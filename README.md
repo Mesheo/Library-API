@@ -1,4 +1,4 @@
->Todo o conteúdo desse readme foi beaseado nesse <a href="https://www.youtube.com/watch?v=wtl8ZyCbTbg&list=PLcM_74VFgRhpyCtsNXyBUf27ZRbyQnEEb">vídeo!</a> Eu o escrevi com a intenção de revisar aquilo que aprendi, espero que possa te ajudar 👍
+>Todo o conteúdo desse readme foi beaseado <a href="https://www.youtube.com/watch?v=wtl8ZyCbTbg&list=PLcM_74VFgRhpyCtsNXyBUf27ZRbyQnEEb">nesse vídeo</a>! Eu o escrevi com a intenção de revisar aquilo que aprendi, espero que possa te ajudar 👍
 
 # API para uma biblioteca
 
@@ -9,20 +9,22 @@
 * [Criação das rotas](#criação-das-rotas)
 
 # Introdução
-A ideia do projeto é que possamos armazenar livros e seus atributos dentro de um banco de dados e gerenciar tudo isso sem precisar de uma interface gráfica. Assim, outra aplicação poderá se comunicar com a nossa de forma eficiente. Esse é o conceito de API (Aplication Programming Interface)
+A ideia do projeto é que possamos armazenar livros e seus atributos dentro de um banco de dados e gerenciar tudo isso sem precisar de uma interface gráfica. Assim, outra aplicação poderá se comunicar com a nossa de forma eficiente.  Esse é o conceito de API (Application Programming Interface)
 
 # Preparando o ambiente
-Aqui temos a receita de bolo pra deixar a sua máquina pronta para levantar um servidor usando o django e receber aquele **200** bonito na cara
+Aqui temos a receita de bolo pra deixar a sua máquina pronta para levantar um servidor com o django e receber aquele **200** bonito na cara
 
 ```bash
 >python -m venv venv #criando ambiente virtual na sua versao do python
 >./venv/Scripts/Activate.ps1 #Ativando o ambiente virtual
 >pip install django djangorestframework #instalação local das nossas dependências
 ```
-A graça do ambiente virtual é que todas as suas dependências *(e no python costumam ser muitas)*  ficam apenas num diretório específico. Logo, você pode criar projetos que usam versões diferentes da mesma biblioteca sem que haja conflito na hora do import.
+O lance todo do ambiente virtual é que todas as suas dependências *(e no python costumam ser muitas)*  ficam apenas num diretório específico. 
+Logo, com uma venv você pode criar projetos que usam versões diferentes da mesma biblioteca sem que haja conflito na hora do import.
 
 # Projeto x App
-Ainda no terminal usamos os proximos comandos para criar o `project` que vai carregar nosso `app`. No django cada project pode carregar multiplos apps, como um site de esportes que pode ter um app para os artigos, outro para rankings etc.
+Ainda no terminal usamos os próximos comandos para criar o `project` que vai carregar nosso `app`. 
+No django cada project pode carregar multiplos apps, como um site de esportes que pode ter um app para os artigos, outro para rankings etc.
 ```bash
 >django-admin startproject library . #ponto indica diretório atual
 >django-admin startapp books

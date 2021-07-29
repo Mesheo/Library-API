@@ -1,32 +1,4 @@
-Skip to content
-Search or jump to…
 
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@Mesheo 
-pedroimpulcetto
-/
-bitylibrary
-1
-01
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-bitylibrary/.gitignore
-@pedroimpulcetto
-pedroimpulcetto Initial commit
-Latest commit 6eb4adf on 14 Sep 2020
- History
- 1 contributor
-129 lines (105 sloc)  1.76 KB
   
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -38,6 +10,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+.img
 build/
 develop-eggs/
 dist/

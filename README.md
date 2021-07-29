@@ -66,7 +66,7 @@ Dentro de **./library/books** iremos criar a pasta **/api** com os arquivos
 * viewsets.py 
 
 ### Serializers
-Numa api o serializer é o que transforma os objetos do programa em strings para conseguir fazer a comunicação cliente-servidor da maneira mais eficaz possivél: com 0s e 1s
+Numa api o serializer é o que transforma os objetos do programa em strings para conseguir fazer a comunicação cliente-servidor da maneira mais eficaz possível: com 0s e 1s
 
 ```py
 from rest_framework import serializers

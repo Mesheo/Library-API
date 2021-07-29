@@ -19,12 +19,13 @@ Aqui temos a receita de bolo pra deixar a sua máquina pronta para levantar um s
 >./venv/Scripts/Activate.ps1 #Ativando o ambiente virtual
 >pip install django djangorestframework #instalação local das nossas dependências
 ```
-O lance todo do ambiente virtual é que todas as suas dependências *(e no python costumam ser muitas)*  ficam apenas num diretório específico. <br>
+O lance do ambiente virtual é que todas suas dependências *(que no python costumam ser muitas)*  ficam apenas num diretório específico. <br>
 Logo, com uma venv você pode criar projetos que usam versões diferentes da mesma biblioteca sem que haja conflito na hora do import.
 
 # Projeto x App
-Ainda no terminal usamos os próximos comandos para criar o `project` que vai carregar nosso `app`. 
-No django cada project pode carregar multiplos apps, como um site de esportes que pode ter um app para os artigos, outro para rankings etc.
+No django cada *project* pode carregar múltiplos *apps*, como um site de esportes que pode ter um app para os artigos, outro para rankings etc.<br>
+Ainda no terminal usamos os próximos comandos para criar o project *library* que vai carregar nosso app *books*. 
+
 ```bash
 >django-admin startproject library . #ponto indica diretório atual
 >django-admin startapp books

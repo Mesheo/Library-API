@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import os
+import django_heroku
 
 from pathlib import Path
 
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-#s&7e@spwilf%goa1m=1k3n#m+cpd%akh7hxw@h*h236#zq!-n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://biblioteca-api-django.herokuapp.com/"]
 
 
 # Application definition
@@ -125,3 +127,4 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

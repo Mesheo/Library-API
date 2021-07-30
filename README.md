@@ -121,6 +121,51 @@ Agora você pode usar um programa como <a href="https://insomnia.rest/">Insomnia
 
 >O python facilita bastante coisas para a gente, como os serializers (que convertem objetos para strings na comunicação cliente-servidor) e os verbos http (GET, POST, PUT, DELETE) que de certa forma também vem por padrão. Não me aprofundei neles durante o readme porque também preciso entender melhor como essas coisas funcionam
 
+## Deploy no heroku
+<p>Irei dar o passo a passo presumindo que você acabou de clonar o repositório ou criar o seu próprio projeto de API
+</p>
+Antes de tudo precisamos:
+
+* Iniciar um repositório git : git init
+* Escrever um arquivo .gitignore a no seu diretório atual com   
+
+```py
+venv
+*.pyc
+.env
+.DS_Store
+```
+Talvez você precise ignorar mais coisas. Usar um [template](https://github.com/github/gitignore/blob/master/Python.gitignore) de .gitignore para projetos python é uma boa nesses casos.
+
+* Agora você precisa conectar o seu git no heroku. Para isso siga as linhas abaixo 
+
+* Criar o arquivo Procfile ainda nessa pasta e preencher com o conteúdo abaixo 
+```py
+web: gunicorn library.wsgi #configuração do django para serviços web
+```
+library.wsgi é o nome do projeto + extensão wsgi. Você vai achar esse nome em **./library/settings.py**  
+![nome_projeto](img/nome_projeto.png)
+
+* Write on the terminal
+```py
+pip freeze > requirements.txt 
+# Cria um arquivo txt com todas as bibliotecas que o servidor heroku vai precisar instalar
+```
+* Now you just have to setup your git to connect with heroku. Follow the lines below
+
+```bash 
+> heroku login #pressione qualquer tecla exceto Q e faça o login
+> heroku create nome_do_projeto
+> pip install django-heroku #lembre de estar com a venv ativada
+> pip install guinicorn
+> git add .
+> git commit -m "Commited yay"
+> heroku git:remote -a mywebapp
+> git push heroku master #This part can take several minutes
+> heroku ps:scale web=1 #your app is already deployed but this make sure will be only one runnig around
+> heroku open # :D
+```
+
 # Getting Started
 ```bash
 # Clone repository

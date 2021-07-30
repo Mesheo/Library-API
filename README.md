@@ -122,11 +122,16 @@ Agora você pode usar um programa como <a href="https://insomnia.rest/">Insomnia
 >O python facilita bastante coisas para a gente, como os serializers (que convertem objetos para strings na comunicação cliente-servidor) e os verbos http (GET, POST, PUT, DELETE) que de certa forma também vem por padrão. Não me aprofundei neles durante o readme porque também preciso entender melhor como essas coisas funcionam
 
 # Getting Started
-```markdown
->git clone https://github.com/Mesheo/Biblioteca-API.git
->cd Biblioteca-API
->python -m venv venv
->./venv/Scripts/Activate.ps1
->pip install django djangorestframework
->python manage.py runserver
+```bash
+# Clone repository
+git clone https://github.com/Mesheo/Biblioteca-API.git && cd Biblioteca-API
+
+# Create Virtual Environment
+python -m venv venv && ./venv/Scripts/Activate.ps1
+
+# Install dependencies
+pip install django djangorestframework
+
+# Run Application
+python manage.py runserver
 ```

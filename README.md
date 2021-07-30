@@ -7,6 +7,7 @@
 * [Projeto x App](#projeto-x-app)
 * [Criando os modelos e API](#criando-os-modelos-e-api)
 * [Criação das rotas](#criação-das-rotas)
+* [Getting Started](#getting-started)
 
 # Introdução
 A ideia do projeto é que possamos armazenar livros e seus atributos dentro de um banco de dados e gerenciar tudo isso sem precisar de uma interface gráfica. Assim, outra aplicação poderá se comunicar com a nossa de forma eficiente.<br> Esse é o conceito de API (Application Programming Interface)
@@ -37,7 +38,7 @@ Sua estrutura de pastas deve estar assim:
 
 Para criar as tabelas no banco de dados (Por enquanto *Sqlite3*) executamos o comando
 ```bash
-python manage.py migrate
+>python manage.py migrate
 ```
 Isso evita que a notificação *unapplied migrations* apareça na próxima vez que você levantar o servidor 
 
@@ -119,3 +120,13 @@ Agora você pode usar um programa como <a href="https://insomnia.rest/">Insomnia
 ![insomnia](img/insomnia.png)
 
 >O python facilita bastante coisas para a gente, como os serializers (que convertem objetos para strings na comunicação cliente-servidor) e os verbos http (GET, POST, PUT, DELETE) que de certa forma também vem por padrão. Não me aprofundei neles durante o readme porque também preciso entender melhor como essas coisas funcionam
+
+# Getting Started
+```markdown
+>git clone https://github.com/Mesheo/Biblioteca-API.git
+>cd Biblioteca-API
+>python -m venv venv
+>./venv/Scripts/Activate.ps1
+>pip install django djangorestframework
+>python manage.py runserver
+```

@@ -49,6 +49,7 @@ Isso evita que a notificação *unapplied migrations* apareça na próxima vez q
 No arquivo **./library/settings.py** precisamos indicar ao nosso projeto library sobre a existência do app books e também o uso do rest framework. Portanto adicionamos as seguintes linhas sublinhadas
 
 ![imagem das linhas](img/library_settings.jpg)
+
 Já que nossa API suporta imagens como atributos também sera necessário o seguite acrescimo de codigo em **./library/settings.py**
 ```py
 MEDIA_URL = '/media'

@@ -1,4 +1,4 @@
->Boa parte desse projeto foi beaseado <a href="https://www.youtube.com/watch?v=wtl8ZyCbTbg&list=PLcM_74VFgRhpyCtsNXyBUf27ZRbyQnEEb">nesse vídeo</a> e <a href="https://pythonacademy.com.br/blog/construcao-de-apis-com-django-rest-framework">nesse artigo</a>! Se assim como eu, você entrou agora no mundo do BackEnd, recomendo fortemente tais materiais. Escrevi o readme com a intenção de revisar o que aprendi e também ajudar aqueles com caminhos parecidas no mundo tech. <br>Espero que você aprenda algo novo 👍
+>Boa parte do projeto foi beaseado <a href="https://www.youtube.com/watch?v=wtl8ZyCbTbg&list=PLcM_74VFgRhpyCtsNXyBUf27ZRbyQnEEb">nesse vídeo</a> e <a href="https://pythonacademy.com.br/blog/construcao-de-apis-com-django-rest-framework">nesse artigo</a>! Se assim como eu, você entrou agora no mundo BackEnd, recomendo fortemente tais materiais. Escrevi esse readme com a intenção de revisar o que aprendi e também ajudar aqueles com caminhos similares no mundo tech. <br>Espero que você aprenda algo novo! 👍
 
 # API para uma biblioteca
 

@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-#s&7e@spwilf%goa1m=1k3n#m+cpd%akh7hxw@h*h236#zq!-n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["biblioteca-api-django.herokuapp.com"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -122,6 +122,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+ 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

@@ -19,6 +19,7 @@ Aqui temos a receita de bolo pra deixar a sua máquina pronta para levantar um s
 >python -m venv venv #criando ambiente virtual na sua versao do python
 >./venv/Scripts/Activate.ps1 #Ativando o ambiente virtual
 >pip install django djangorestframework #instalação local das nossas dependências
+>pip install pillow #biblioteca pra lidar com imagens
 ```
 O lance do ambiente virtual é que todas suas dependências *(que no python costumam ser muitas)*  ficam apenas num diretório específico. <br>
 Logo, com uma venv você pode criar projetos que usam versões diferentes da mesma biblioteca sem que haja conflito na hora do import.
@@ -48,6 +49,12 @@ Isso evita que a notificação *unapplied migrations* apareça na próxima vez q
 No arquivo **./library/settings.py** precisamos indicar ao nosso projeto library sobre a existência do app books e também o uso do rest framework. Portanto adicionamos as seguintes linhas sublinhadas
 
 ![imagem das linhas](img/library_settings.jpg)
+Já que nossa API suporta imagens como atributos também sera necessário o seguite acrescimo de codigo em **./library/settings.py**
+```py
+MEDIA_URL = '/media'
+ 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+```
 
 Agora em **./library/books/models.py** iremos criar nosso modelo com os atributos que um livro deve ter.
 
@@ -55,12 +62,17 @@ Agora em **./library/books/models.py** iremos criar nosso modelo com os atributo
 from django.db import models
 from uuid import uuid4
 
+#funcao pra receber as imagens e gerar endereço
+def upload_image_books(instance, filename):
+    return f"{instance.id_book}-{filename}"
+
 class Books(models.Model):
     #criando os atributos do livro
     id_book = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=255)
     release_year = models.IntegerField()
+    image = models.ImageField(upload_to=upload_image_books, blank=False, null=True)
 ```
 ## Serializers e Viewsets
 Dentro de **./library/books** iremos criar a pasta **/api** com os arquivos 
@@ -97,6 +109,9 @@ Agora com o viewset e o serializer a única coisa que falta é uma rota. Portant
 from django.contrib import admin
 from django.urls import path, include
 
+from django.conf.urls.static import static
+from django.conf import settings
+
 from rest_framework import routers
 from books.api import viewsets as booksviewsets
 #criando nosso objeto de rota
@@ -106,7 +121,7 @@ route.register(r'books', booksviewsets.BooksViewSet, basename="Books")
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(route.urls))
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ```
 Como criamos um modelo novo lá em cima, precisamos avisar e em seguida migrar todos essas novas informações para o banco de dados
 

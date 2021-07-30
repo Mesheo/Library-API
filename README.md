@@ -93,15 +93,13 @@ class BooksSerializer(serializers.ModelSerializer):
 
 ### Viewsets
 ```py
-from django.db import models
-from uuid import uuid4
+from rest_framework import viewsets
+from books.api import serializers
+from books import models
 
-class Books(models.Model):
-    #criando os atributos do livro
-    id_book = models.UUIDField(primary_key=True, default=uuid4, editable=False)
-    title = models.CharField(max_length=255)
-    author = models.CharField(max_length=255)
-    release_year = models.IntegerField()
+class BooksViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.BooksSerializer
+    queryset = models.Books.objects.all() #tambem todos os campos do nosso modelo
 ```
 # Criação das rotas
 Agora com o viewset e o serializer a única coisa que falta é uma rota. Portanto vamos para **./library/urls.py** resolver esse problema

@@ -10,7 +10,7 @@
 * [Getting Started](#getting-started)
 
 # Introdução
-A ideia do projeto é que possamos armazenar livros e seus atributos dentro de um banco de dados e gerenciar tudo isso sem precisar de uma interface gráfica. Assim, outra aplicação poderá se comunicar com a nossa de forma eficiente.<br> Esse é o conceito de API (Application Programming Interface)
+A ideia do projeto é que possamos armazenar livros e seus atributos dentro de um banco de dados e realizar as operações de <a href="https://github.com/Mesheo/first-crud-django">CRUD</a> sem precisar de uma interface gráfica. Assim, outra aplicação poderá se comunicar com a nossa de forma eficiente.<br> Esse é o conceito de API (Application Programming Interface)
 
 # Preparando o ambiente
 Aqui temos a receita de bolo pra deixar a sua máquina pronta para levantar um servidor com o django e receber aquele **200** bonito na cara

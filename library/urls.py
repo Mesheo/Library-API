@@ -6,10 +6,13 @@ from django.conf import settings
 
 from rest_framework import routers
 from books.api import viewsets as booksviewsets
+
+
 #criando nosso objeto de rota
 route = routers.DefaultRouter()
 route.register(r'books', booksviewsets.BooksViewSet, basename="Books")
 
+#defindo os endereços url
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(route.urls))
